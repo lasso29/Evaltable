@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url(./sky\ image.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+    marquee{
+        background-image: linear-gradient(to left, rgb(42, 42, 186), rgb(23, 154, 197));
+        font-family: tahoma;
+        color: white;
+        height: 7vh;
+        font-size: 30px;
+        font-weight: 500;
+    }
+    button{
+        height: 50px;
+        width: 200px;
+        background-color: rgb(39, 93, 231);
+        color: white;
+        font: century gothic;
+        font-size: 30px;
+        border: none;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    input{
+        height: 45px;
+        width: 150px;
+        border-radius: 10px;
+    }
+    table {
+        background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        color: black;
+        border: 3px solid black;
+    }
+    @media (max-width:768px){
+    body{
+        background-image: url(./potrait\ 1.jpg);
+    }
+    button{
+        margin-bottom: 10px;
+        color: rgb(39, 93, 231);
+        background-color: white;
+        font-family: century gothic;
+        font-weight: 900;
+    }
+    input{
+        margin-top: 10px;
+    }
+    }
+
+</style>
+
+<body>
+   <marquee behavior="" direction="alternate"> MY EVAL TABLE</marquee>
+    <input type="text" name="" id="row" placeholder="ROW">
+    <input type="text" name="" id="col" placeholder="COLUMN"> <br> <br>
+    <button onclick="multiply()">Multiply ✖ </button>
+    <button onclick="division ()">Division ➗</button>
+    <button onclick="substract ()">Subtract ➖</button>
+    <button onclick="addition ()">Addition ➕</button> <br> <br>
+    <div id="result"></div>
+
+    <script>
+function multiply(){
+    var rowtoggler= row.value   
+    var coltoggler=col.value
+    result.innerHTML=""
+    table="<table>"
+    for(var i=1;i<=rowtoggler;i++){
+     table+="<tr>"
+       for(var j=1;j<=coltoggler;j++){
+        total=j*i
+        table+=`<td style="border:2px solid black">${j} x ${i} = ${total}</td>`
+       }
+       table+="</tr>"   
+    }
+    table+="</table>"
+    result.innerHTML=table
+}
+function division(){
+    var rowtoggler= row.value
+    var coltoggler=col.value
+    result.innerHTML=""
+    table="<table>"
+    for(var i=1;i<=rowtoggler;i++){
+     table+="<tr>"
+       for(var j=1;j<=coltoggler;j++){
+        total=(j/i).toFixed(2)
+        table+=`<td style="border:2px solid black">${j} / ${i} = ${total}</td>`
+       }
+       table+="</tr>"
+    }
+    table+="</table>"
+    result.innerHTML=table
+}
+function substract(){
+    var rowtoggler= row.value
+    var coltoggler=col.value
+    result.innerHTML=""
+    table="<table>"
+    for(var i=1;i<=rowtoggler;i++){
+     table+="<tr>"
+       for(var j=1;j<=coltoggler;j++){
+        total=j-i
+        table+=`<td style="border:2px solid black">${j} - ${i} = ${total}</td>`
+       }
+       table+="</tr>"
+    }
+    table+="</table>"
+    result.innerHTML=table
+}
+function addition(){
+    var rowtoggler= row.value
+    var coltoggler=col.value
+    result.innerHTML=""
+    table="<table>"
+    for(var i=1;i<=rowtoggler;i++){
+     table+="<tr>"
+       for(var j=1;j<=coltoggler;j++){
+        total=j+i
+        table+=`<td style="border:2px solid black">${j} + ${i} = ${total}</td>`
+       }
+       table+="</tr>"
+    }
+    table+="</table>"
+    result.innerHTML=table
+}
+    </script>
+</body>
+</html>
